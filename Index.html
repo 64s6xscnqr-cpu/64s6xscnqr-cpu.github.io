@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FinnBi — Finanzielle Bildung für Schulen</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="FinnBi bringt finanzielle Bildung in Schulen: praxisnahe Workshops, geleitet von Expert:innen.">
+  <style>
+    :root{
+      --bg: #1B1A2E;
+      --card: #121225;
+      --primary: #2163BD;
+      --cta: #0040DD;
+      --text: #D4D4D0;
+      --accent: #BE9875;
+      --glass: rgba(255,255,255,0.04);
+      --radius: 12px;
+      --maxw: 1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg,var(--bg) 0%, #0f0f20 100%);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+    }
+    .container{
+      max-width:var(--maxw);
+      margin:40px auto;
+      padding:28px;
+    }
+
+    /* Header / Nav */
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:28px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+    .logo{
+      width:46px;height:46px;border-radius:10px;
+      background:linear-gradient(135deg,var(--primary),var(--cta));
+      display:flex;align-items:center;justify-content:center;font-weight:700;color:white;
+      box-shadow:0 6px 20px rgba(0,0,0,0.5);
+      font-size:18px;
+    }
+    .brand h1{font-size:18px;margin:0}
+    nav{display:flex;gap:18px;align-items:center}
+    nav a{color:var(--text);text-decoration:none;opacity:0.85;font-weight:600;font-size:14px}
+    .signup{
+      background:var(--cta);
+      color:white;
+      padding:10px 14px;border-radius:10px;font-weight:600;text-decoration:none;
+      box-shadow:0 6px 18px rgba(0,64,221,0.18);
+    }
+
+    /* Hero */
+    .hero{
+      display:grid;
+      grid-template-columns: 1fr 420px;
+      gap:32px;
+      align-items:center;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+      padding:36px;border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,0.5);
+    }
+    .eyebrow{display:inline-block;background:var(--glass);padding:6px 10px;border-radius:9px;font-weight:600;font-size:13px;color:var(--text);opacity:0.9}
+    h2{font-size:40px;margin:12px 0 10px;line-height:1.05}
+    p.lead{opacity:0.86;max-width:60%;margin-bottom:22px}
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+    .btn{
+      display:inline-block;padding:12px 18px;border-radius:12px;font-weight:700;text-decoration:none;
+      background:var(--cta);color:white;box-shadow:0 10px 30px rgba(0,64,221,0.18)
+    }
+    .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text);padding:10px 16px}
+
+    /* features */
+    .features{display:flex;gap:14px;margin-top:28px}
+    .feature{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+      padding:14px;border-radius:12px;min-width:0;flex:1;display:flex;gap:12px;align-items:flex-start;
+    }
+    .icon{
+      width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:700;
+      background:linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.03)
+    }
+    .feature h4{margin:0 0 6px;font-size:15px}
+    .feature p{margin:0;opacity:0.85;font-size:13px}
+
+    /* right hero card illustration */
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.06));
+      border-radius:14px;padding:18px;min-height:320px;color:var(--text);
+      display:flex;flex-direction:column;gap:14px;align-items:center;justify-content:center;
+      border:1px solid rgba(255,255,255,0.03);
+    }
+    .avatar{
+      width:160px;height:160px;border-radius:18px;background:linear-gradient(180deg,#f8d7b8,#e1b78a);
+      box-shadow:inset 0 -8px 24px rgba(0,0,0,0.08),0 14px 40px rgba(0,0,0,0.4);
+      display:flex;align-items:center;justify-content:center;font-weight:700;color:#2d2d2d;font-size:46px;
+    }
+    .card h3{margin:4px 0 0}
+    .card p{opacity:0.9;text-align:center}
+
+    /* Vision section */
+    .vision{
+      margin-top:36px;padding:26px;border-radius:12px;background:linear-gradient(90deg, rgba(33,99,189,0.06), rgba(0,64,221,0.04));
+      display:flex;align-items:center;justify-content:space-between;gap:16px;
+    }
+    .vision h3{margin:0;font-size:20px}
+    .vision p{margin:0;opacity:0.95}
+
+    /* Footer / Newsletter form */
+    footer{margin-top:40px;padding:26px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent)}
+    form.newsletter{
+      display:flex;gap:12px;flex-wrap:wrap;align-items:center;
+    }
+    input[type="email"], input[name="Vorname"]{
+      padding:14px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);
+      background: rgba(255,255,255,0.02);color:var(--text);min-width:220px;
+      outline:none;font-size:14px;
+    }
+    .form-cta{
+      background:var(--primary);color:white;padding:12px 16px;border-radius:10px;border:none;font-weight:700;
+      cursor:pointer;
+    }
+    .small{font-size:13px;opacity:0.75;margin-top:10px}
+
+    /* responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr; padding:20px}
+      h2{font-size:32px}
+      .lead{max-width:100%}
+      .card{order: -1}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">FB</div>
+        <div>
+          <h1 style="margin:0">FinnBi</h1>
+          <div style="font-size:12px;opacity:0.7">Finanzielle Bildung für Schulen</div>
+        </div>
+      </div>
+
+      <nav aria-label="Hauptnavigation">
+        <a href="#features">Workshops</a>
+        <a href="#vision">Vision</a>
+        <a class="signup" href="#newsletter">Newsletter</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div>
+          <div class="eyebrow">Für Schulen • Praxisnah • Von Expert:innen</div>
+          <h2 id="hero-title">Finanzielle Bildung — einfach, persönlich, strukturiert.</h2>
+          <p class="lead">FinnBi bringt strukturierte Finanzbildung direkt in den Schulalltag. Unsere Workshops sind praxisnah und werden von Expert:innen der Finanzbranche gehalten — damit Jugendliche Sicherheit und Selbstvertrauen im Umgang mit Geld gewinnen.</p>
+
+          <div class="cta-row">
+            <a class="btn" href="#newsletter">Get Started</a>
+            <a class="btn secondary" href="#features">Mehr erfahren</a>
+          </div>
+
+          <div class="features" id="features" style="margin-top:22px;">
+            <div class="feature">
+              <div class="icon">€</div>
+              <div>
+                <h4>Was ist Geld?</h4>
+                <p>Grundlagen — was Geld bedeutet und wie es funktioniert.</p>
+              </div>
+            </div>
+
+            <div class="feature">
+              <div class="icon">💡</div>
+              <div>
+                <h4>Wie spare ich richtig?</h4>
+                <p>Praktische Sparmethoden, Budgetplanung und Ziele setzen.</p>
+              </div>
+            </div>
+
+            <div class="feature">
+              <div class="icon">₿</div>
+              <div>
+                <h4>Was ist Krypto?</h4>
+                <p>Einführung in Kryptowährungen & Risiken verstehen.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="card" aria-label="FinnBi Avatar und Kurzinfo">
+          <div class="avatar" role="img" aria-label="Finn Avatar">F</div>
+          <h3>FinnBi Workshops</h3>
+          <p>Persönlich, strukturiert, engagiert — zugeschnitten auf Schulklassen und Altersgruppen. Unsere Trainer:innen bringen echte Erfahrung aus Finanzwirtschaft & Bildung mit.</p>
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <span style="font-size:13px;padding:8px 10px;border-radius:8px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03)">45–90 min</span>
+            <span style="font-size:13px;padding:8px 10px;border-radius:8px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03)">Interactives Format</span>
+          </div>
+        </aside>
+      </section>
+
+      <section class="vision" id="vision" aria-labelledby="vision-title">
+        <div>
+          <h3 id="vision-title">Unsere Vision</h3>
+          <p><strong>„Wir wollen jungen Menschen die Möglichkeit geben, die wir nie hatten.“</strong></p>
+        </div>
+        <div style="max-width:480px;opacity:0.95">
+          <p style="margin:0">Wir glauben, dass finanzielle Kompetenz ein essentielles Werkzeug für ein selbstbestimmtes Leben ist. FinnBi vermittelt dieses Werkzeug durch leicht verständliche Inhalte, reale Beispiele und echte Ansprechpartner.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer id="newsletter" aria-label="Newsletter Anmeldung">
+      <h3 style="margin-top:0">Newsletter</h3>
+      <p style="margin:6px 0 14px">Trage dich ein — wir schicken Neuigkeiten zu Workshops, Materialien und Pilotprojekten.</p>
+
+      <!-- WICHTIG: Ersetze DEINE_EMAIL mit eurer Empfängeradresse -->
+      <form class="newsletter" action="https://formsubmit.co/DEINE_EMAIL" method="POST" onsubmit="return validateForm(this)">
+        <input type="hidden" name="_subject" value="FinnBi Newsletter Anmeldung">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="Vorname" placeholder="Vorname" aria-label="Vorname" required>
+        <input type="email" name="email" placeholder="E-Mail" aria-label="E-Mail" required>
+        <button class="form-cta" type="submit">Anmelden</button>
+      </form>
+      <div class="small">Mit der Anmeldung erklärst du dich mit dem Empfang unseres Newsletters einverstanden. Du kannst dich jederzeit abmelden.</div>
+    </footer>
+  </div>
+
+  <script>
+    function validateForm(form){
+      // kleine Frontend-Validierung
+      const email = form.querySelector('input[type="email"]').value.trim();
+      const name = form.querySelector('input[name="Vorname"]').value.trim();
+      if(!name || !email) {
+        alert('Bitte Vorname und E-Mail ausfüllen.');
+        return false;
+      }
+      // einfache E-Mail RegEx
+      const re = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+      if(!re.test(email)){
+        alert('Bitte eine gültige E-Mail angeben.');
+        return false;
+      }
+      // Formsubmit benötigt keine weitere Anpassung
+      return true;
+    }
+  </script>
+</body>
+</html>
